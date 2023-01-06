@@ -1,23 +1,28 @@
-This XVM.psm1 is only an update of Bulk VM Migration using new Cross vCenter vMotion Utility Fling created by William Lam
-https://williamlam.com/2017/12/bulk-vm-migration-using-new-cross-vcenter-vmotion-utility-fling.html
-https://github.com/lamw/PowerCLI-Example-Scripts/tree/master/Modules/CrossvCentervmotion
+### Introduction
+#### This XVM.psm1 is only an update of Bulk VM Migration using new Cross vCenter vMotion Utility Fling created by William Lam
+> https://williamlam.com/2017/12/bulk-vm-migration-using-new-cross-vcenter-vmotion-utility-fling.html
+> https://github.com/lamw/PowerCLI-Example-Scripts/tree/master/Modules/CrossvCentervmotion
 
-My contribution is to adapt code for working with version 3.1 of Cross Vcenter Workload Migration Utility from VMware Flings
-https://flings.vmware.com/cross-vcenter-workload-migration-utility
+#### My contribution is to adapt code for working with version 3.1 of Cross Vcenter Workload Migration Utility from VMware Flings
+> https://flings.vmware.com/cross-vcenter-workload-migration-utility
 
-Changes :
-  Set-XVCMConfiguration
-    This function configure the global variable `CrossvCenterURL`, and calls the `Disable-SSLCertificateValidation` function to ignore SSL certificate validation.
-    Disable-SSLCertificateValidation
-    Add new function to ignore SSL certificate validation with Powershell 5.1
-New-XVCMRequest
-    diskFormatConversion
-    [ValidateSet('Same Format as Source', 'Thick Provision Lazy Zeroed', 'Thick Provision Eager Zeroed', 'Thin Provision')]
-VMNamePattern
-    Used to define VM paterns. Set to null if you dont use
-Some other minor changes...
 
-How to use :
+### Changes
+#### Set-XVCMConfiguration
+> This function configure the global variable `CrossvCenterURL`, and calls the `Disable-SSLCertificateValidation` function to ignore SSL certificate validation.
+> Disable-SSLCertificateValidation
+> Add new function to ignore SSL certificate validation with Powershell 5.1
+#### New-XVCMRequest
+> diskFormatConversion
+> [ValidateSet('Same Format as Source', 'Thick Provision Lazy Zeroed', 'Thick Provision Eager Zeroed', 'Thin Provision')]
+#### VMNamePattern
+> Used to define VM paterns. Set to null if you dont use
+#### Some other minor changes...
+....
+
+
+
+### How to use
     Import-Module XVM.psm1
     # Cross vCenter URL
     $CrossvCenterURL = "https://crossvcenterworkloadutility:8443"
